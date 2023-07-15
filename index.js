@@ -18,3 +18,16 @@ noBtn.addEventListener('mouseover', () => {
     noBtn.style.top = j + 'px';
 });
 
+//fake input
+//-- See full documentation for TypeIt at https://typeitjs.com.
+
+new TypeIt('#realInput', {
+  startDelay: 400,
+  strings: 'Alex',
+  afterComplete: () => {
+    new TypeIt('#fakeInput', {
+      startDelay: 400,
+      strings: 'MacArthur',
+    }).go();
+  }
+}).go();
