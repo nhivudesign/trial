@@ -75,3 +75,45 @@
     <script src="js/myJs.js"></script>
   </body>
 </html>
+
+            <div>
+  <h3>My first name is: <input type="text" id="realInput"/></h3>
+  
+  <br />
+
+  <h3>My last name is: <span id="fakeInput"></span></h3>
+</div>
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 3rem;
+  padding: 0 2rem;
+  font-weight: 600;
+}
+
+h3 {
+  margin: 0;
+}
+
+input, span {
+  font: inherit;
+  display: inline-block;
+  border: 0;
+  width: 400px;
+  border-bottom: 2px solid black;
+}
+//-- See full documentation for TypeIt at https://typeitjs.com.
+
+new TypeIt('#realInput', {
+  startDelay: 400,
+  strings: 'Alex',
+  afterComplete: () => {
+    new TypeIt('#fakeInput', {
+      startDelay: 400,
+      strings: 'MacArthur',
+    }).go();
+  }
+}).go();
